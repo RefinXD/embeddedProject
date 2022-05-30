@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Log In</title>
+  </head>
+  <body>
+    <div
+      class="p-5 container"
+      style="
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <!-- <h1 style="font-size: 3rem">Room 104</h1> -->
+      <div
+        id="border"
+        style="border: 1px black solid; width: 50%; padding-bottom: 20px"
+      >
+        <div>
+          <img
+            class="mt-4"
+            src="https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png"
+            alt="user image"
+            style="border: 1px black solid; border-radius: 50%; width: 50%"
+          />
+        </div>
+        <br />
+        <!-- <br /> -->
+        <div style="display: flex; justify-content: center">
+          <div class="mb-3 row" style="width: 80%">
+            <label
+              style="font-size: 1rem"
+              for="staticUser"
+              class="col-xl-3 col-form-label"
+              ><i class="fa-solid fa-door-open"></i> ห้อง:
+            </label>
+            <div class="col-xl-9">
+              <select
+                style="font-size: 1rem"
+                class="form-select"
+                id="floatingSelectGrid"
+              >
+                <option selected>กรุณาเลือกห้องของคุณ</option>
+                <option value="1">ห้อง 104</option>
+                <option value="2">ห้อง 105</option>
+                <option value="3">ห้อง 106</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div style="display: flex; justify-content: center">
+          <div class="mb-3 row" style="width: 80%">
+            <label
+              style="font-size: 1rem"
+              for="inputPassword"
+              class="col-xl-3 col-form-label"
+              ><i class="fa-solid fa-lock"></i> รหัสผ่าน:
+            </label>
+            <div class="col-xl-9">
+              <input
+                type="password"
+                class="form-control input-lg"
+                id="inputPassword"
+              />
+              <h6
+                id="uncorrectPassword"
+                style="
+                  text-align: left;
+                  display: none;
+                  color: red;
+                  margin-top: 10px;
+                "
+              >
+                รหัสผ่านของคุณไม่ถูกต้อง
+              </h6>
+            </div>
+          </div>
+        </div>
+        <!-- <br /> -->
+        <div class="col-12">
+          <button
+            id="login"
+            style="font-size: 1rem"
+            type="submit"
+            class="btn btn-primary"
+          >
+            ล็อคอิน <i class="fa-solid fa-right-to-bracket"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal1 -->
+    <div
+      class="modal fade"
+      id="validateModal1"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="border: 0px; padding-left: 30px">
+            <h6 class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              กรุณาเลือกห้องของคุณ
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal2 -->
+    <div
+      class="modal fade"
+      id="validateModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="border: 0px; padding-left: 30px">
+            <h6 class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-exclamation"></i> กรุณากรอกรหัสผ่าน
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal3 -->
+    <div
+      class="modal fade"
+      id="validateModal3"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="border: 0px; padding-left: 30px">
+            <h6 class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              รหัสผ่านของคุณไม่ถูกต้อง
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal4 -->
+    <div
+      class="modal fade"
+      id="validateModal4"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="border: 0px; padding-left: 30px">
+            <h6 class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-exclamation"></i> ไม่สามารถเปิดได้
+              เนื่องจากไม่มีคนอยู่หน้าประตู
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal5 -->
+    <div
+      class="modal fade"
+      id="complete_login"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div
+          class="modal-content"
+          style="border-radius: 10px !important; padding: 10px"
+        >
+          <div
+            class="modal-header"
+            style="border: 0px; padding: 5px; padding-bottom: 3px"
+          >
+            <h6 style="color: green" class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-check"></i> คุณได้ล็อคอินสำเร็จ
+            </h6>
+          </div>
+          <hr />
+          <div class="modal-body" style="padding: 5px">
+            <h6 id="countdown"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal5 -->
+    <div
+      class="modal fade"
+      id="door_alert"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      aria-hidden="true"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div
+          class="modal-content"
+          style="border-radius: 10px !important; padding: 10px"
+        >
+          <div
+            class="modal-header"
+            style="border: 0px; padding: 5px; padding-bottom: 0.75rem"
+          >
+            <h6 style="color: red" class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              &nbsp;ห้องของคุณกำลังถูกงัด โปรดตรวจสอบห้องของคุณโดยด่วน
+            </h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="close_door_alert"
+            >
+              Close
+            </button>
+            <a href="tel:+0818318928"
+              ><button
+                id="phone"
+                type="button"
+                style="background-color: red"
+                class="btn btn-primary"
+              >
+                แจ้งเตือนเหตุฉุกเฉิน
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <script src="firebase.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/49b5dba3cf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -16,8 +16,8 @@ SoftwareSerial NodeSerial2(D5, D6); // RX | TX
 #define OUT_LED D7
 bool signupOK = false;
 
-const char* ssid = "Boom iPhone"; //true_home2G_f4G Boom iPhone TP-Link_5E7B
-const char* password = "Boom2544"; //fTUFMfXm Boom2544 51056263
+const char* ssid = "XD"; //true_home2G_f4G Boom iPhone TP-Link_5E7B
+const char* password = "Anik_32069"; //fTUFMfXm Boom2544 51056263
 const char* mqtt_server = "broker.netpie.io";
 const int mqtt_port = 1883;
 const char* mqtt_Client = "0e472421-b532-42fe-9559-32a3e1676e6e";

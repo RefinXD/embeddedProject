@@ -1,0 +1,24 @@
+body {
+    width:100%;
+    cursor: auto;
+}
+
+.form-control {
+    font-size: 1rem !important;
+}
+
+.modal-content {
+    border-radius: 100px !important;
+}
+
+@media screen and (max-width: 1200px) {
+    img {
+        width:60% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #border{
+        width:100% !important;
+    }
+}
